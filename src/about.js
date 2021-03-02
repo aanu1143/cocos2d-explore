@@ -31,7 +31,13 @@ var AboutLayer = cc.Layer.extend({
         image.loadTexture(res.HelloWorld_png);
         
         layout.addChild(label);
-        // layout.addChild(image);
+        layout.addChild(image);
+
+        var image_action = new cc.MoveTo.create(1, cc.p(-250, -200));
+        image.runAction(image_action);
+
+        var label_action = new cc.JumpTo(1, cc.p(50, -100), 42, 3);
+        label.runAction(label_action);
 
 
         this.addChild(layout);
