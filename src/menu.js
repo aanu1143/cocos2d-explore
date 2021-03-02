@@ -20,9 +20,7 @@ var menu = cc.Layer.extend({
             menuItem2 = new cc.MenuItemFont("About", this.about);
         
         menuItem1.setPosition(cc.p(size.width/2, size.height/2));
-        menuItem1.setScale(0.1);
-
-        
+        menuItem1.setScale(0.08);
 
         menuItem2.setPosition(cc.p(size.width/2, size.height/2-200));
         menuItem2.setColor(cc.color(0, 0, 0, 255));
@@ -40,7 +38,7 @@ var menu = cc.Layer.extend({
             swallowTouches: true,
             onTouchBegan: function (touch, event){    
                 // var target = event.getCurrentTarget(); 
-                cc.log("Touch Began");
+                cc.log("Event Listerner: Touch Began");
             }
         } , this);
 
@@ -65,7 +63,6 @@ var menu = cc.Layer.extend({
 var menuItemScene = cc.Scene.extend({
 
     onEnter:function () {
-
         this._super();
         if(!this.layer) {
             cc.log("menu scene");
