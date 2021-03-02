@@ -27,6 +27,7 @@ var res = {
     play_png : "res/play.png",
     back_png : "res/back.png",
     HelloWorld_png: "res/HelloWorld.png",
+    close_btn: "res/close_btn.png",
     button_primary: "res/button_primary.mp3"
 };
 

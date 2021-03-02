@@ -8,7 +8,7 @@ var menu = cc.Layer.extend({
             size = cc.winSize;
         this.addChild(backgroundLayer);
 
-        var label = new cc.LabelTTF("Menu Items", "Grobold", 48);
+        var label = new cc.LabelTTF("Menu Items", "Arial", 48);
         label.x = size.width / 2;
         label.y = size.height / 2 + 200;
         label.setColor(new cc.color(100, 186, 243, 255));
@@ -17,7 +17,8 @@ var menu = cc.Layer.extend({
 
 
         var menuItem1 = new cc.MenuItemImage(res.play_png, res.play_png, this.play),
-            menuItem2 = new cc.MenuItemFont("About", this.about);
+            menuItem2 = new cc.MenuItemFont("About", this.about),
+            menuItem3 = new cc.MenuItemFont("LinearLayoutParameter", this.linear);
         
         menuItem1.setPosition(cc.p(size.width/2, size.height/2));
         menuItem1.setScale(0.08);
@@ -25,7 +26,10 @@ var menu = cc.Layer.extend({
         menuItem2.setPosition(cc.p(size.width/2, size.height/2-200));
         menuItem2.setColor(cc.color(0, 0, 0, 255));
 
-        var menu = new cc.Menu(menuItem1, menuItem2);
+        menuItem3.setPosition(cc.p(size.width/2, size.height/2-350));
+        menuItem3.setColor(cc.color(0, 0, 0, 255));
+
+        var menu = new cc.Menu(menuItem1, menuItem2, menuItem3);
         menu.setPosition(cc.p(0, 0));
         this.addChild(menu);
 
@@ -53,6 +57,12 @@ var menu = cc.Layer.extend({
 
     about: function () {
         var scene = new AboutScene();
+        cc.audioEngine.playEffect(res.button_primary);
+        cc.director.runScene(scene);
+    },
+
+    linear: function () {
+        var scene = new LayoutScene();
         cc.audioEngine.playEffect(res.button_primary);
         cc.director.runScene(scene);
     }

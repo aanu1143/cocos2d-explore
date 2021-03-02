@@ -1,5 +1,5 @@
 
-var LoadingLayer = cc.Layer.extend({
+var StartScreenLayer = cc.Layer.extend({
     sprite:null,
     ctor:function () {
         this._super();
@@ -38,13 +38,13 @@ var LoadingLayer = cc.Layer.extend({
 });
 
 
-var LoadingScene = cc.Scene.extend({
+var StartScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
 
         if(!this.layer) {
-            cc.log("loading scene");
-            this.layer = new LoadingLayer();
+            cc.log("start screen scene");
+            this.layer = new StartScreenLayer();
             this.addChild(this.layer);
         }
     }

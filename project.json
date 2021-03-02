@@ -13,9 +13,10 @@
 
     "jsList" : [
         "src/resource.js",
-        "src/loading.js",
+        "src/startscreen.js",
         "src/app.js",
         "src/about.js",
+        "src/layout.js",
         "src/menu.js"
     ]
 }
