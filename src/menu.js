@@ -29,7 +29,7 @@ var menu = cc.Layer.extend({
         menu.setPosition(cc.p(0, 0));
         this.addChild(menu);
 
-        var fade = new cc.FadeIn.create(2);
+        var fade = new cc.FadeIn.create(0.5);
         menu.setOpacity(0);
         menu.runAction(fade);
 

@@ -54,12 +54,19 @@ var HelloLayer = cc.Layer.extend({
         
         layout.addChild(image);
         layout.addChild(label);
-        layout.setScale(0.6);
 
         this.addChild(layout);
 
-        var action = new cc.ScaleTo.create(1, 1, 1);
-        layout.runAction(action);
+        var scale_action = new cc.ScaleTo.create(2, 1, 1),
+            move_action = new cc.MoveTo.create(2, cc.p(140, -300)),
+            label_action1 = new cc.MoveBy.create(0.75, cc.p(-90, 0)),
+            label_action2 = new cc.MoveBy.create(1.25, cc.p(0, -150));
+        image.setScale(0.3);
+        image.runAction(scale_action);
+        image.runAction(move_action);
+        
+        var sequence = cc.Sequence.create([label_action1, label_action2]);
+        label.runAction(sequence);
 
         var button = new ccui.Button();
 
