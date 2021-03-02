@@ -54,9 +54,12 @@ var HelloLayer = cc.Layer.extend({
         
         layout.addChild(image);
         layout.addChild(label);
-
+        layout.setScale(0.6);
 
         this.addChild(layout);
+
+        var action = new cc.ScaleTo.create(1, 1, 1);
+        layout.runAction(action);
 
         var button = new ccui.Button();
 
